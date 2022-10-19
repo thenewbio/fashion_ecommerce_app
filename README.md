@@ -1,10 +1,11 @@
-# fashion_ecommerce
+# fashion_ecommerce app
 
-A new Flutter project.
 
-## Getting Started
+This project is a starting point for a Flutter application in which the aim was to keep my ui design kill to par.
 
-This project is a starting point for a Flutter application.
+### Thanks to [Delowar Hossain](https://dribbble.com/shots/19017733-Fashion-eCommerce-App/attachments/14184523?mode=media) for the ui/ux design sample on [dribble.com](https://dribbble.com/shots/19017733-Fashion-eCommerce-App/attachments/14184523?mode=media)
+
+
 
 A few resources to get you started if this is your first Flutter project:
 

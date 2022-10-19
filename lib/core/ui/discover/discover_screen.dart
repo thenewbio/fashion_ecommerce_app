@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../constants/app_color.dart';
 import 'discover_item.dart';
 
 class DiscoverScreen extends StatelessWidget {
@@ -12,7 +13,7 @@ class DiscoverScreen extends StatelessWidget {
       body: Container(
         height: 300,
         child: ListView.builder(
-            padding: const EdgeInsets.only(top: 40),
+            padding: const EdgeInsets.only(top: 10),
             itemCount: discoverList.length,
             itemExtent: 240,
             reverse: true,
@@ -29,23 +30,18 @@ class DiscoverScreen extends StatelessWidget {
                               borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(12),
                                   topRight: Radius.circular(12)),
-                              color: Colors.white,
+                              color: AppColor.bgColor,
                               image: DecorationImage(
                                   fit: BoxFit.contain,
                                   image: AssetImage(discoverList[i].image))),
-
                           width: double.maxFinite,
-                          // child: Image.asset(
-                          //   'assets/images/dis.jpg',
-                          //   fit: BoxFit.cover,
-                          // ),
                         ),
                         Text(
                           discoverList[i].title,
                           style: GoogleFonts.montserrat(
                               fontSize: 15, fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Text('\$${discoverList[i].price}',
@@ -68,10 +64,10 @@ class DiscoverScreen extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(40))),
                             Positioned(
                               top: -6,
-                              right: -10,
+                              right: -8,
                               child: IconButton(
                                   onPressed: () {},
-                                  icon: Icon(Icons.favorite,
+                                  icon: const Icon(Icons.favorite,
                                       color: Colors.orangeAccent)),
                             ),
                           ],

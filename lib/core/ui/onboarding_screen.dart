@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:fashion_ecommerce/core/constants/app_color.dart';
 import 'package:fashion_ecommerce/core/ui/bottom_nav_bar/bottom_nav_screen.dart';
 import 'package:fashion_ecommerce/core/widget/slide_dots.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +47,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 itemCount: slideList.length,
                 itemBuilder: (ctx, i) {
                   return Container(
-                    color: Colors.brown.shade900,
+                    color: AppColor.bgColor,
                     padding: const EdgeInsets.all(20),
                     width: double.maxFinite,
                     height: MediaQuery.of(context).size.height / 1.7,
@@ -54,87 +55,91 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   );
                 }),
           ),
-          CustomPaint(
-              painter: BottomClip(),
-              child: SizedBox(
-                width: double.infinity,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        for (int i = 0; i < slideList.length; i++)
-                          if (i == _currentPage)
-                            SlideDots(true)
-                          else
-                            SlideDots(false)
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      'Discover Trends',
-                      style: GoogleFonts.montserrat(
-                          fontSize: 30,
-                          fontWeight: FontWeight.w600,
-                          letterSpacing: 1),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Text('Express yourself through the art',
+          Expanded(
+            child: CustomPaint(
+                painter: BottomClip(),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          for (int i = 0; i < slideList.length; i++)
+                            if (i == _currentPage)
+                              SlideDots(true)
+                            else
+                              SlideDots(false)
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        'Discover Trends',
+                        style: GoogleFonts.montserrat(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 1),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text('Express yourself through the art',
+                          style: GoogleFonts.montserrat(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.grey)),
+                      Text(
+                        'of the fashionism',
                         style: GoogleFonts.montserrat(
                             fontSize: 13,
                             fontWeight: FontWeight.w600,
-                            color: Colors.grey)),
-                    Text(
-                      'of the fashionism',
-                      style: GoogleFonts.montserrat(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.grey),
-                    ),
-                    SizedBox(height: 50),
-                    InkWell(
-                      onTap: () {
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (_) => const BottomNavigationScreen()));
-                      },
-                      child: Stack(
-                        children: [
-                          Container(
-                            height: 60,
-                            width: 60,
-                            decoration: BoxDecoration(
-                                color: Colors.brown.shade200,
-                                borderRadius: BorderRadius.circular(50)),
-                          ),
-                          Positioned(
-                            top: 5,
-                            left: 5,
-                            child: Container(
+                            color: Colors.grey),
+                      ),
+                      SizedBox(height: 50),
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (_) =>
+                                      const BottomNavigationScreen()));
+                        },
+                        child: Stack(
+                          children: [
+                            Container(
+                              height: 60,
+                              width: 60,
                               decoration: BoxDecoration(
-                                  color: Colors.brown,
+                                  color: Colors.brown.shade200,
                                   borderRadius: BorderRadius.circular(50)),
-                              height: 50,
-                              width: 50,
-                              child: const Icon(
-                                FontAwesomeIcons.arrowRight,
-                                color: Colors.white,
+                            ),
+                            Positioned(
+                              top: 5,
+                              left: 5,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: AppColor.button,
+                                    borderRadius: BorderRadius.circular(50)),
+                                height: 50,
+                                width: 50,
+                                child: const Icon(
+                                  FontAwesomeIcons.arrowRight,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 30,
-                    )
-                  ],
-                ),
-              )),
+                      SizedBox(
+                        height: 30,
+                      )
+                    ],
+                  ),
+                )),
+          ),
         ],
       ),
     ));
