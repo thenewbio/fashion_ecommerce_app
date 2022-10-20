@@ -1,3 +1,4 @@
+import 'package:fashion_ecommerce/core/widget/header_item.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -6,29 +7,34 @@ class HeaderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          ListTile(
-            title: Text('Hi Nowshin',
-                style: GoogleFonts.montserrat(
-                    fontSize: 15,
-                    color: Colors.grey,
-                    fontWeight: FontWeight.bold)),
-            subtitle: Text('What is your outfit Today',
-                style: GoogleFonts.montserrat(
-                    fontSize: 18,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold)),
-            trailing: IconButton(
+    return Column(
+      children: [
+        ListTile(
+          title: Text('Hi Nowshin',
+              style: GoogleFonts.montserrat(
+                  fontSize: 15,
+                  color: Colors.grey,
+                  fontWeight: FontWeight.bold)),
+          subtitle: Text('What is your outfit Today',
+              style: GoogleFonts.montserrat(
+                  fontSize: 18,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold)),
+          trailing: Container(
+            decoration: BoxDecoration(
+                color: Color(0xffeaded2),
+                borderRadius: BorderRadius.circular(40)),
+            child: IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   Icons.search,
-                  size: 40,
+                  size: 30,
+                  color: Colors.black,
                 )),
-          )
-        ],
-      ),
+          ),
+        ),
+        SizedBox(height: 100, child: HeaderItem())
+      ],
     );
   }
 }

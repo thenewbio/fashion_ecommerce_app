@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Fashion Ecommerce',
-      theme:
-          ThemeData(primarySwatch: Colors.yellow, primaryColor: Colors.amber),
+      theme: ThemeData(primarySwatch: Colors.brown, primaryColor: Colors.amber),
       home: const OnboardingScreen(),
     );
   }
