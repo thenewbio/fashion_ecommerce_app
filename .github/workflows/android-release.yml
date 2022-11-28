@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD
 
 # 1
 on:
