@@ -1,4 +1,4 @@
-name: fashion ecommerce app ci/cd
+name: build
 
 # 1
 on:
@@ -27,16 +27,20 @@ jobs:
         with:
           distribution: zulu
           java-version: 11.0.17
+          cache: gradle
       # 10   
       - uses: subosito/flutter-action@v2
         with:
           # 11
           flutter-version: 3.0.5
-          channel: 'stable'
+          channel: stable
+          cache: true
       # 12
       - name: Get dependencies
         run: flutter pub get
 
       # Runs a set of commands using the runners shell
       - name: Start release build
+        path: build/app/outputs/flutter-apk/app-release.apk
         run: flutter build apk --split-per-abi
+        

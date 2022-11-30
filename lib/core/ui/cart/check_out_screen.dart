@@ -26,13 +26,13 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                        color: Color(0xffeaded2),
+                        color: const  Color(0xffeaded2),
                         borderRadius: BorderRadius.circular(40)),
                     child: IconButton(
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        icon: Icon(Icons.arrow_back_ios)),
+                        icon: const Icon(Icons.arrow_back_ios)),
                   ),
                   Text('CheckOut',
                       style: GoogleFonts.montserrat(
@@ -40,13 +40,13 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                   Container(
                     height: 40,
                     width: 40,
-                    padding: EdgeInsets.only(right: 20),
+                    padding: const EdgeInsets.only(right: 20),
                     decoration: BoxDecoration(
-                        color: Color(0xffeaded2),
+                        color: const  Color(0xffeaded2),
                         borderRadius: BorderRadius.circular(40)),
                     child: FittedBox(
                         child:
-                            Badge(child: Icon(Icons.shopping_cart_checkout))),
+                            Badge(child: const Icon(Icons.shopping_cart_checkout))),
                   )
                 ],
               ),
@@ -61,7 +61,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 // onStepCancel: _currentStep == 2 ? null : cancel,
                 steps: <Step>[
                   Step(
-                    title: Text(''),
+                    title: const Text(''),
                     content: Column(
                       children: <Widget>[
                         TextFormField(
@@ -80,7 +80,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                         : StepState.disabled,
                   ),
                   Step(
-                    title: Text(''),
+                    title: const Text(''),
                     content: Column(
                       children: <Widget>[
                         TextFormField(
@@ -88,7 +88,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                               const InputDecoration(labelText: 'Home Address'),
                         ),
                         TextFormField(
-                          decoration: InputDecoration(labelText: 'Postcode'),
+                          decoration: const InputDecoration(labelText: 'Postcode'),
                         ),
                       ],
                     ),
@@ -98,7 +98,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                         : StepState.disabled,
                   ),
                   Step(
-                    title: Text(''),
+                    title: const Text(''),
                     content: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
@@ -107,10 +107,10 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                           style: GoogleFonts.montserrat(
                               fontSize: 20, fontWeight: FontWeight.w700),
                         ),
-                        Container(
+                        SizedBox(
                           height: 50,
                           child: TextFormField(
-                            decoration: InputDecoration(labelText: 'Postcode'),
+                            decoration: const InputDecoration(labelText: 'Postcode'),
                           ),
                         ),
                         Text(

@@ -15,17 +15,17 @@ class Slide {
 final slideList = [
   Slide(
     imageUrl: AppImage.yuri,
-    title: '',
+    title: 'Discover Trends',
     description: '',
   ),
   Slide(
     imageUrl: AppImage.jessica,
-    title: '',
+    title: 'Discover Trend',
     description: '',
   ),
   Slide(
     imageUrl: AppImage.jessica1,
-    title: '',
+    title: 'Discover Fashions',
     description: '',
   ),
 ];

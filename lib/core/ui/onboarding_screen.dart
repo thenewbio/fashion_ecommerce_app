@@ -77,7 +77,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           height: 20,
                         ),
                         Text(
-                          'Discover Trends',
+                          slideList[0].title,
                           style: GoogleFonts.montserrat(
                               fontSize: 30,
                               fontWeight: FontWeight.w600,
