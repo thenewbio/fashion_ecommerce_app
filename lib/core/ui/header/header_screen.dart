@@ -33,7 +33,7 @@ class HeaderScreen extends StatelessWidget {
                 )),
           ),
         ),
-        SizedBox(height: 100, child: HeaderItem())
+        const SizedBox(height: 90, child: HeaderItem()),
       ],
     );
   }

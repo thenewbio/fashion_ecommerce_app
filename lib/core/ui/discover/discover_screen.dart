@@ -9,7 +9,7 @@ class DiscoverScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 270,
       child: ListView.builder(
           padding: const EdgeInsets.only(top: 10),
@@ -19,6 +19,7 @@ class DiscoverScreen extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, i) {
             return Card(
+              color: Colors.white70,
               child: Stack(
                 children: [
                   Column(
@@ -38,36 +39,38 @@ class DiscoverScreen extends StatelessWidget {
                       Text(
                         discoverList[i].title,
                         style: GoogleFonts.montserrat(
-                            fontSize: 15, fontWeight: FontWeight.bold),
+                            fontSize: 17, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(
                         height: 5,
                       ),
                       Text('\$${discoverList[i].price}',
-                          style: GoogleFonts.montserrat(
-                              fontSize: 15,
-                              color: Colors.brown.shade400,
+                          style: GoogleFonts.allan(
+                              fontSize: 20,
+                              color: AppColor.button,
                               fontWeight: FontWeight.bold))
                     ],
                   ),
                   Positioned(
-                      top: 20,
-                      right: 20,
+                      top: 15,
+                      right: 8,
                       child: Stack(
                         children: [
                           Container(
-                              height: 30,
-                              width: 30,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(40))),
-                          Positioned(
-                            top: -6,
-                            right: -8,
-                            child: IconButton(
-                                onPressed: () {},
-                                icon: const Icon(Icons.favorite,
-                                    color: Colors.orangeAccent)),
+                            height: 30,
+                            width: 30,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(30)),
+                            child: FittedBox(
+                              child: IconButton(
+                                  onPressed: () {},
+                                  icon: const Icon(
+                                    Icons.favorite,
+                                    color: Colors.orangeAccent,
+                                    size: 35,
+                                  )),
+                            ),
                           ),
                         ],
                       ))

@@ -15,31 +15,35 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                  padding: const EdgeInsets.only(top: 20),
-                  height: 200,
-                  decoration: const BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                    Color(0xffeaded2),
-                    Color(0xffeaded2),
-                  ], begin: Alignment.centerLeft, end: Alignment.centerRight)),
-                  child: const HeaderScreen()),
-              const SizedBox(height: 2),
-              Text('Discover',
-                  style: GoogleFonts.lato(
-                      fontSize: 20, fontWeight: FontWeight.bold)),
-              const DiscoverScreen(),
-              const SizedBox(height: 1000, child: PopularScreen())
-            ],
-          ),
+      body: Container(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(colors: [
+          Color(0xffeaded2),
+          Colors.white,
+        ], begin: Alignment.topLeft, end: Alignment.centerRight)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+                padding: const EdgeInsets.only(top: 20),
+                height: 200,
+                child: const HeaderScreen()),
+            Align(
+              alignment: const Alignment(-0.9, 0.0),
+              child: Text(
+                'Discover',
+                style:
+                    GoogleFonts.lato(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+            ),
+            const SizedBox(height: 2),
+            const DiscoverScreen(),
+            const Expanded(child: PopularScreen())
+          ],
         ),
       ),
+
+      // ),
     );
   }
 }
@@ -55,17 +59,18 @@ class PopularScreen extends StatelessWidget {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.max,
           children: [
             Text('Most Popular',
                 style: GoogleFonts.lato(
-                    fontSize: 20, fontWeight: FontWeight.bold)),
+                    fontSize: 22, fontWeight: FontWeight.bold)),
             TextButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (_) =>
                           PopularWidget(total: discoverList.length)));
                 },
-                child: Text('Sell  All',
+                child: Text('See  more',
                     style: GoogleFonts.lato(
                         color: AppColor.button,
                         fontSize: 20,
@@ -75,15 +80,16 @@ class PopularScreen extends StatelessWidget {
         Expanded(
           child: GridView.builder(
               scrollDirection: Axis.vertical,
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               itemCount: discoverList.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 5,
                   crossAxisSpacing: 5,
-                  childAspectRatio: 0.6),
+                  childAspectRatio: 0.75),
               itemBuilder: (context, i) {
                 return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Stack(
                       children: [
